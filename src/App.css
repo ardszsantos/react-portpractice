@@ -17,34 +17,60 @@
 
 .navigationBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 95px;
   width: 100%;
   max-width: 1200px;
-  padding: 24px;
-  color: #ffff;
-  font-weight: 200;
+  padding: 20px;
 }
 
-.navigationBar ul {
+.nav-logo img {
+  width: 50px;
+  height: auto;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.hamburger.open .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-menu {
   display: flex;
   list-style: none;
-  gap: 70px;
+  gap: 40px;
 }
 
-.navigationBar ul li {
-  display: inline;
-}
-
-.navigationBar ul li a {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 14px;
+.nav-menu li a {
   color: white;
   text-decoration: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
 }
 
-.navigationBar ul li a:hover {
+.nav-menu li a:hover {
   text-decoration: underline;
 }
 
@@ -59,22 +85,64 @@
   cursor: pointer;
 }
 
-
+/* Hero Section */
 .heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background-color: black;
   color: white;
+}
 
-} 
+.heroSectionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+}
 
 .heroSectionText {
   width: 536px;
-  padding-top: 201px;
 }
 
-.heroSectionImage {
-  padding-top: 150px;
+.heroSectionMainText {
+  font-family: "Raleway", sans-serif;
+  font-size: 44px;
+  padding: 10px 0;
+  font-weight: 800;
+}
 
+.heroSectionSubText {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.14px;
+  color: #9C9C9C;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.heroSectionButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 21px 64px;
+  background-color: #3F8E00;
+  border: solid 1px #62BA1B;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  color: white;
+}
+
+.vector {
+  margin-left: 10px;
 }
 
 .personalImage {
@@ -84,56 +152,94 @@
   object-fit: scale-down;
 }
 
-.heroSectionContainer {
-  display: flex;
-  margin-left: 550px;
-}
-
-.heroSectionMainText {
-  font-family: "Raleway", sans-serif;
-  font-size: 44px;
-  padding: 10px 0 10px 0;
-  font-weight: 800;
-}
-
-
-.heroSectionSubText {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 400; /* Regular */
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.14px; /* 1% of font size */
-  text-align: justify;
-  vertical-align: top;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  color: #9C9C9C;
-}
-
-.heroSectionButton {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: bold;
-  gap: 10px;
-  padding: 21px 64px;
-  border-radius: 4px;
-  background-color: #3F8E00;
-  border: solid 1px #62BA1B;
-  color: white;
-}
-
-.vector {
-  padding: 0;
-  margin: 0;
-}
-
 .heroMentions {
-  margin: 109px 550px;
+  margin-top: 100px;
+  text-align: center;
 }
 
+.mentionsText {
+  font-size: 18px;
+  color: #fff;
+}
 
 .mentionsCards {
   margin-top: 20px;
+}
+
+.mentionsCards img {
+  width: 200px;
+}
+
+/* Media Queries */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .navSocials {
+    display: none;
+  }
+
+  .heroSectionContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroSectionText {
+    width: 100%;
+  }
+
+  .heroSectionMainText {
+    font-size: 32px;
+  }
+
+  .heroSectionSubText {
+    font-size: 14px;
+  }
+
+  .heroSectionButton {
+    padding: 15px 40px;
+  }
+
+  .personalImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .heroMentions {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .heroSectionMainText {
+    font-size: 24px;
+  }
+
+  .heroSectionSubText {
+    font-size: 12px;
+  }
+
+  .heroSectionButton {
+    padding: 10px 15px;
+  }
+
+  .personalImage {
+    width: 150px;
+    height: 150px;
+  }
 }

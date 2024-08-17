@@ -1,0 +1,34 @@
+/* Extra Small Phones */
+@media (max-width: 320px) {
+  /* Styles for iPhone SE */
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  /* Styles for iPhone XR, Samsung Galaxy S8+, Galaxy Z Fold 5 */
+}
+
+/* Medium Phones to Phablets */
+@media (max-width: 600px) {
+  /* Styles for iPhone 12 Pro, iPhone 14 Pro Max, Pixel 7, Galaxy S20 Ultra, Surface Duo */
+}
+
+/* Tablets in Portrait */
+@media (max-width: 768px) {
+  /* Styles for iPad Mini */
+}
+
+/* Tablets in Landscape */
+@media (max-width: 1024px) {
+  /* Styles for iPad Air, iPad Pro, Surface Pro 7, Nest Hub */
+}
+
+/* Large Tablets or Small Desktops */
+@media (max-width: 1280px) {
+  /* Styles for Nest Hub Max */
+}
+
+/* Desktops and Large Devices */
+@media (min-width: 1600px) {
+  /* Styles for Asus Zenbook Fold (unfolded) */
+}
